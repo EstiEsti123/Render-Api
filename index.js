@@ -24,7 +24,7 @@ app.get('/apps', async (req, res) => {
     }
 });
 
-app.get('/:path*', (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
